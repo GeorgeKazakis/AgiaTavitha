@@ -126,14 +126,23 @@ p { margin: 0 0 1em; }
 /* Feast */
 .feast { background: linear-gradient(160deg, var(--wine-deep), var(--wine)); color: #fbf3e2; }
 .feast h2 { color: #fff; }
-.feast__inner { display: grid; grid-template-columns: auto 1fr; gap: clamp(28px, 6vw, 72px); align-items: center; }
+.feast__days { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 5vw, 56px); margin-bottom: clamp(32px, 5vw, 48px); }
+.feast__block { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto 1fr; column-gap: 24px; align-items: start; }
 .feast__date {
+  grid-row: span 2;
   display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-  width: 180px; height: 180px; border-radius: 50%;
-  border: 2px solid var(--gold); outline: 1px solid rgba(201,162,75,.4); outline-offset: 8px;
+  width: 128px; height: 128px; border-radius: 50%;
+  border: 2px solid var(--gold); outline: 1px solid rgba(201,162,75,.4); outline-offset: 6px;
 }
-.feast__day { font-family: var(--serif); font-size: 4rem; line-height: 1; color: var(--gold); }
-.feast__month { font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.feast__day { font-family: var(--serif); font-size: 3rem; line-height: 1; color: var(--gold); }
+.feast__month { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.feast__label { font-family: var(--sans); font-size: .85rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-soft); margin: 8px 0 10px; }
+.feast__services { list-style: none; margin: 0; padding: 0; }
+.feast__services li { display: flex; flex-direction: column; padding: 8px 0; border-top: 1px solid rgba(230,207,150,.2); }
+.feast__services time { font-weight: 600; color: #fff; }
+.feast__services span { color: #ecdcc0; }
+.feast__text { border-top: 1px solid rgba(201,162,75,.35); padding-top: clamp(24px, 4vw, 36px); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .feast__countdown {
   display: inline-block; margin-top: 8px; padding: 8px 16px;
   border-radius: 999px; background: rgba(201,162,75,.18); color: var(--gold-soft); font-weight: 500;
@@ -166,10 +175,9 @@ p { margin: 0 0 1em; }
 }
 @media (max-width: 640px) {
   .nav { display: none; }
-  .feast__inner { grid-template-columns: 1fr; justify-items: start; }
-  .feast__date { width: 140px; height: 140px; }
-  .feast__day { font-size: 3rem; }
-  .feast__month { font-size: .8rem; }
+  .feast__days { grid-template-columns: 1fr; }
+  .feast__date { width: 104px; height: 104px; }
+  .feast__day { font-size: 2.4rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
