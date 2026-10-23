@@ -6,7 +6,7 @@
   <title>Μονάδα Φροντίδας Ηλικιωμένων «Η Αγία Ταβιθά» · Δήμος Ηλιούπολης</title>
   <meta name="description" content="Μονάδα Φροντίδας Ηλικιωμένων «Η Αγία Ταβιθά» του Δήμου Ηλιούπολης. Επικοινωνία και τοποθεσία.">
   <meta property="og:title" content="Μονάδα Φροντίδας Ηλικιωμένων «Η Αγία Ταβιθά» · Δήμος Ηλιούπολης">
-  <meta property="og:description" content="Ακολουθίες, πανήγυρις και τοποθεσία του ναού.">
+  <meta property="og:description" content="Ακολουθίες, πανήγυρις και τοποθεσία του παρεκκλησίου.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="el_GR">
   <meta name="theme-color" content="#5a1a22">
@@ -102,8 +102,8 @@
         </div>
         <div>
           <p class="eyebrow">Θρονική εορτή</p>
-          <h2>Πανήγυρις του Ναού</h2>
-          <p>Ο ναός πανηγυρίζει στη μνήμη της Αγίας Ταβιθά. Την παραμονή τελείται Μέγας Πανηγυρικός Εσπερινός και ανήμερα Όρθρος και Πανηγυρική Θεία Λειτουργία.</p>
+          <h2>Πανήγυρις του Παρεκκλησίου</h2>
+          <p>Το παρεκκλήσι πανηγυρίζει στη μνήμη της Αγίας Ταβιθά. Την παραμονή τελείται Μέγας Πανηγυρικός Εσπερινός και ανήμερα Όρθρος και Πανηγυρική Θεία Λειτουργία.</p>
           <p class="feast__countdown" id="countdown" hidden></p>
         </div>
       </div>
@@ -129,7 +129,7 @@
               <li><span class="label">Διεύθυνση</span>Οδός &amp; αριθμός, 163 xx Ηλιούπολη</li>
               <li><span class="label">Τηλέφωνο</span><a href="tel:+30210XXXXXXX">210 XXX XXXX</a></li>
               <li><span class="label">Email</span><a href="mailto:info@example.gr">info@example.gr</a></li>
-              <li><span class="label">Γραφείο ναού</span>Δευτέρα – Παρασκευή, 09:00 – 12:00</li>
+              <li><span class="label">Γραφείο παρεκκλησίου</span>Δευτέρα – Παρασκευή, 09:00 – 12:00</li>
             </ul>
             <a class="btn btn--wine" href="https://www.google.com/maps/dir/?api=1&amp;destination=37.93895,23.75389" target="_blank" rel="noopener">Οδηγίες πρόσβασης</a>
           </div>
@@ -154,8 +154,8 @@
       if (feast < today) feast.setFullYear(feast.getFullYear() + 1);
       var days = Math.round((feast - today) / 86400000);
       var el = document.getElementById('countdown');
-      el.textContent = days === 0 ? 'Σήμερα εορτάζει ο ναός μας — Χρόνια πολλά!'
-        : days === 1 ? 'Αύριο εορτάζει ο ναός μας.'
+      el.textContent = days === 0 ? 'Σήμερα εορτάζει το παρεκκλήσι μας — Χρόνια πολλά!'
+        : days === 1 ? 'Αύριο εορτάζει το παρεκκλήσι μας.'
         : 'Απομένουν ' + days + ' ημέρες έως την πανήγυρη.';
       el.hidden = false;
       document.getElementById('year').textContent = now.getFullYear();
