@@ -95,15 +95,34 @@
     </section>
 
     <section id="feast" class="section feast">
-      <div class="wrap feast__inner">
-        <div class="feast__date" aria-hidden="true">
-          <span class="feast__day">25</span>
-          <span class="feast__month">Οκτωβρίου</span>
+      <div class="wrap">
+        <div class="feast__days">
+          <article class="feast__block">
+            <div class="feast__date" aria-hidden="true">
+              <span class="feast__day">24</span>
+              <span class="feast__month">Οκτωβρίου</span>
+            </div>
+            <h3 class="feast__label"><span class="sr-only">24 Οκτωβρίου · </span>Παραμονή</h3>
+            <ul class="feast__services">
+              <li><time>18:00</time><span>Μέγας Πανηγυρικός Εσπερινός</span></li>
+              <li><time>19:30</time><span>Λιτανεία της Ιεράς Εικόνας</span></li>
+            </ul>
+          </article>
+          <article class="feast__block">
+            <div class="feast__date" aria-hidden="true">
+              <span class="feast__day">25</span>
+              <span class="feast__month">Οκτωβρίου</span>
+            </div>
+            <h3 class="feast__label"><span class="sr-only">25 Οκτωβρίου · </span>Ανήμερα</h3>
+            <ul class="feast__services">
+              <li><time>07:00 – 10:00</time><span>Όρθρος &amp; Θεία Λειτουργία</span></li>
+              <li><time>18:00</time><span>Εσπερινός</span></li>
+            </ul>
+          </article>
         </div>
-        <div>
-          <p class="eyebrow">Θρονική εορτή</p>
+        <div class="feast__text">
           <h2>Πανήγυρις του Παρεκκλησίου</h2>
-          <p>Το παρεκκλήσι πανηγυρίζει στη μνήμη της Αγίας Ταβιθά. Την παραμονή τελείται Μέγας Πανηγυρικός Εσπερινός και ανήμερα Όρθρος και Πανηγυρική Θεία Λειτουργία.</p>
+          <p>Το παρεκκλήσι πανηγυρίζει στη μνήμη της Αγίας Ταβιθά.</p>
           <p class="feast__countdown" id="countdown" hidden></p>
         </div>
       </div>
@@ -146,16 +165,17 @@
   </footer>
 
   <script>
-    // Ημέρες μέχρι την επόμενη πανήγυρη (25/10)
+    // Αντίστροφη μέτρηση έως την πανήγυρη (παραμονή 24/10, ανήμερα 25/10)
     (function () {
       var now = new Date();
       var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      var feast = new Date(today.getFullYear(), 9, 25);
-      if (feast < today) feast.setFullYear(feast.getFullYear() + 1);
-      var days = Math.round((feast - today) / 86400000);
+      var vigil = new Date(today.getFullYear(), 9, 24);
+      if (today > new Date(today.getFullYear(), 9, 25)) vigil.setFullYear(vigil.getFullYear() + 1);
+      var days = Math.round((vigil - today) / 86400000);
       var el = document.getElementById('countdown');
-      el.textContent = days === 0 ? 'Σήμερα εορτάζει το παρεκκλήσι μας — Χρόνια πολλά!'
-        : days === 1 ? 'Αύριο εορτάζει το παρεκκλήσι μας.'
+      el.textContent = days === -1 ? 'Σήμερα εορτάζει το παρεκκλήσι μας — Χρόνια πολλά!'
+        : days === 0 ? 'Σήμερα η παραμονή — Μέγας Πανηγυρικός Εσπερινός στις 18:00.'
+        : days === 1 ? 'Η πανήγυρις ξεκινά αύριο με τον Μέγα Πανηγυρικό Εσπερινό.'
         : 'Απομένουν ' + days + ' ημέρες έως την πανήγυρη.';
       el.hidden = false;
       document.getElementById('year').textContent = now.getFullYear();
