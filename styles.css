@@ -109,6 +109,17 @@ p { margin: 0 0 1em; }
   font-family: var(--serif); font-size: 1.15rem; font-style: italic;
 }
 .quote cite { display: block; margin-top: 12px; font-style: normal; font-family: var(--sans); font-size: .85rem; color: var(--muted); }
+.saint__aside { display: grid; gap: 20px; }
+.hymn {
+  padding: 28px; border-radius: var(--radius);
+  background: var(--wine); color: #fbf3e2;
+  border: 1px solid rgba(201,162,75,.45);
+  box-shadow: 0 10px 30px rgba(61,16,22,.12);
+}
+.hymn__title { font-family: var(--sans); font-size: .8rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin: 0 0 4px; }
+.hymn__mode { font-size: .9rem; color: var(--gold-soft); margin: 0 0 14px; }
+.hymn__text { font-family: var(--serif); font-style: italic; font-size: 1.08rem; line-height: 1.75; margin: 0; }
+.hymn__line { display: block; padding-left: 1.2em; text-indent: -1.2em; }
 
 /* Service cards */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 440px)); gap: 20px; margin-top: 12px; }
