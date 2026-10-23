@@ -68,7 +68,9 @@ p { margin: 0 0 1em; }
 }
 .hero__inner { position: relative; z-index: 1; max-width: 720px; margin-left: max(16px, (100% - 1100px) / 2); }
 .hero h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); font-weight: 600; }
-.hero h1 span { color: var(--gold); }
+.hero__kicker { display: block; font-size: clamp(1.35rem, 3.6vw, 2.1rem); font-weight: 400; color: #fbf3e2; margin-bottom: .25em; }
+.hero__name { display: block; color: var(--gold); }
+.hero__sub { font-size: .85rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--gold-soft); margin: -.2em 0 1.4em; }
 .hero__lead { font-family: var(--serif); font-style: italic; font-size: 1.35rem; color: var(--gold-soft); }
 .hero__lead .ref { font-style: normal; font-size: .9rem; opacity: .8; }
 .hero__text { max-width: 560px; opacity: .92; }
